@@ -7,6 +7,10 @@ if ($http_method === "GET") {
 	require_once(__DIR__."/DEL.php");
 } else if ($http_method === "PATCH") {
 	require_once(__DIR__."/PATCH.php");
+} else if ($http_method === "PUT") {
+	require_once(__DIR__."/PUT.php");
+} else if ($http_method === "POST") {
+	require_once(__DIR__."/POST.php");
 } else {
 	echo json_encode((object)[
 		"status" => 405,
