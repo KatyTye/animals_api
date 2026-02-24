@@ -5,6 +5,8 @@ if ($http_method === "GET") {
 	require_once(__DIR__."/GET.php");
 } else if ($http_method === "DELETE") {
 	require_once(__DIR__."/DEL.php");
+} else if ($http_method === "PATCH") {
+	require_once(__DIR__."/PATCH.php");
 } else {
 	echo json_encode((object)[
 		"status" => 405,
