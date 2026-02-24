@@ -16,6 +16,7 @@ createRoute(file_Path: "routes/docs", type: "docs");
 // CREATE ALL ROUTES
 createRoute("animals", "routes/animals/index", extra: true);
 createRoute("types", "routes/animal_types/index", extra: true);
+createRoute("colors", "routes/animal_colors/index", extra: true);
 
 // LOAD ROUTES
 loadRoutes();
