@@ -17,7 +17,7 @@ $headers = getallheaders();
 $sql = "SELECT a.id, a.type_name FROM animal_types a WHERE a.id = :id";
 $result = returnBoundFromSQL($dbh, $sql, "id", $animal);
 
-if ($result[0]["type_name"] != null) {
+if (isset($result[0]["type_name"])) {
 	echo json_encode((object)[
 		"id" => $result[0]["id"],
 		"status" => 200,
