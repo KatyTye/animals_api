@@ -3,6 +3,8 @@ global $http_method;
 
 if ($http_method === "GET") {
 	require_once(__DIR__."/GET.php");
+} else if ($http_method === "DELETE") {
+	require_once(__DIR__."/DEL.php");
 } else {
 	echo json_encode((object)[
 		"status" => 405,
