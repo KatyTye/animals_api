@@ -9,8 +9,6 @@ The real database connection file is excluded from the repository for security r
 ## Example Connection Code
 
 ```php
-$dbh = null;
-
 try {
     $dbh = new PDO(
         "mysql:host=localhost;dbname=example",
