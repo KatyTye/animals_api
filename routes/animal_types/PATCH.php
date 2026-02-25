@@ -1,8 +1,8 @@
 <?php
 
-$animal = $_GET["type"] ?? $search_able ?? 1;
+$type = $_GET["type"] ?? $search_able ?? 1;
 
-if (!preg_match("/^\d+$/", $animal) || (int)$animal <=0) {
+if (!preg_match("/^\d+$/", $type) || (int)$type <=0) {
 	echo json_encode((object)[
 		"status" => 422,
 		"success" => false,
@@ -51,15 +51,21 @@ $allowed = [
 $field = $headers["field"];
 
 if (!in_array($field, $allowed, true)) {
-    throw new Exception("Invalid field name");
+    echo json_encode((object)[
+		"status" => 404,
+		"success" => false,
+		"message" => "Could not find this field option."
+	]);
+	http_response_code(404);
+	exit;
 }
 
 $sql = "UPDATE animal_types SET `$field` = :val WHERE id = :id";
 
 $stmt = $dbh->prepare($sql);
-$stmt->bindParam(":id", $animal, PDO::PARAM_INT);
+$stmt->bindParam(":id", $type, PDO::PARAM_INT);
 
-if (!preg_match("/^\d+$/", $animal)) {
+if (!preg_match("/^\d+$/", $type)) {
     $stmt->bindValue(":val", (int)$headers["value"], PDO::PARAM_INT);
 } else {
     $stmt->bindValue(":val", $headers["value"], PDO::PARAM_STR);
