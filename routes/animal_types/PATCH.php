@@ -59,7 +59,7 @@ $sql = "UPDATE animal_types SET `$field` = :val WHERE id = :id";
 $stmt = $dbh->prepare($sql);
 $stmt->bindParam(":id", $animal, PDO::PARAM_INT);
 
-if (in_array($field, $allowed, true)) {
+if (!preg_match("/^\d+$/", $animal)) {
     $stmt->bindValue(":val", (int)$headers["value"], PDO::PARAM_INT);
 } else {
     $stmt->bindValue(":val", $headers["value"], PDO::PARAM_STR);

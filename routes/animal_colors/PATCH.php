@@ -51,7 +51,13 @@ $allowed = [
 $field = $headers["field"];
 
 if (!in_array($field, $allowed, true)) {
-    throw new Exception("Invalid field name");
+	echo json_encode((object)[
+		"status" => 404,
+		"success" => false,
+		"message" => "Could not find this field option."
+	]);
+	http_response_code(404);
+	exit;
 }
 
 $sql = "UPDATE animal_colors SET `$field` = :val WHERE id = :id";
@@ -59,7 +65,7 @@ $sql = "UPDATE animal_colors SET `$field` = :val WHERE id = :id";
 $stmt = $dbh->prepare($sql);
 $stmt->bindParam(":id", $animal, PDO::PARAM_INT);
 
-if (in_array($field, $allowed, true)) {
+if (!preg_match("/^\d+$/", $animal)) {
     $stmt->bindValue(":val", (int)$headers["value"], PDO::PARAM_INT);
 } else {
     $stmt->bindValue(":val", $headers["value"], PDO::PARAM_STR);
