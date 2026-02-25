@@ -25,22 +25,24 @@ if (str_contains($full_url[-1], "/")) {
 	]);
 	http_response_code(200);
 	exit;
-	
+
 } else if (preg_match("/^\d+$/", $unit) && (int)$unit>=0) {
 	$sql = "SELECT a.id, a.unit_name, a.unit_short_name FROM units a WHERE a.id = :id";
 	$result = returnBoundFromSQL($dbh, $sql, "id", $unit);
 
-	echo json_encode((object)[
-		"status" => 200,
-		"success" => true,
-		"result" => (object)[
-			"id" => $result[0]["id"],
-			"unit_name" => $result[0]["unit_name"],
-			"unit_short_name" => $result[0]["unit_short_name"]
-		]
-	]);
-	http_response_code(200);
-	exit;
+	if (isset($result[0]["unit_name"])) {
+		echo json_encode((object)[
+			"status" => 200,
+			"success" => true,
+			"result" => (object)[
+				"id" => $result[0]["id"],
+				"unit_name" => $result[0]["unit_name"],
+				"unit_short_name" => $result[0]["unit_short_name"]
+			]
+		]);
+		http_response_code(200);
+		exit;
+	}
 }
 
 echo json_encode((object)[

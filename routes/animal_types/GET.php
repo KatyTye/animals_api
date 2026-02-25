@@ -30,16 +30,18 @@ if (str_contains($full_url[-1], "/")) {
 	$sql = "SELECT a.id, a.type_name FROM animal_types a WHERE a.id = :id";
 	$result = returnBoundFromSQL($dbh, $sql, "id", $type);
 
-	echo json_encode((object)[
-		"status" => 200,
-		"success" => true,
-		"result" => (object)[
-			"id" => $result[0]["id"],
-			"type_name" => $result[0]["type_name"]
-		]
-	]);
-	http_response_code(200);
-	exit;
+	if (isset($result[0]["type_name"])) {
+		echo json_encode((object)[
+			"status" => 200,
+			"success" => true,
+			"result" => (object)[
+				"id" => $result[0]["id"],
+				"type_name" => $result[0]["type_name"]
+			]
+		]);
+		http_response_code(200);
+		exit;
+	}
 }
 
 echo json_encode((object)[
