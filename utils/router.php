@@ -6,7 +6,7 @@ $paths = [];
 $resources = [];
 $not_found_path = "./404.php";
 
-function createRoute($path = "", $file_Path = "", $type = "json", $file_Type = "php", $extra = false) {
+function createRoute($path = "", $file_Path = "", $type = "json", $file_Type = "php", $extra = true) {
 	global $paths;
 
 	$paths[] = (object)[
