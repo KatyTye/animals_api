@@ -23,14 +23,14 @@ if ($stmt->rowCount() > 0) {
 	echo json_encode((object)[
 		"status" => 202,
 		"success" => true,
-		"message" => "The unit has now been deleted."
+		"message" => "The api key has now been deleted."
 	]);
 	http_response_code(202);
 } else {
 	echo json_encode((object)[
 		"status" => 404,
 		"success" => false,
-		"message" => "No unit found with that ID."
+		"message" => "No api key found with that ID."
 	]);
 	http_response_code(404);
 }

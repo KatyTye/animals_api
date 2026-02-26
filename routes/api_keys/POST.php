@@ -2,7 +2,7 @@
 
 $headers = getallheaders();
 
-if (!isset($headers["key_name"]) || !isset($headers["encrypted_password"])
+if (!isset($headers["key_name"]) || !isset($headers["decrypted_password"])
 || !isset($headers["required_auth"])) {
 	echo json_encode((object)[
 		"status" => 400,
@@ -31,7 +31,7 @@ if ($check == false) {
 	exit;
 }
 
-$hashed_password = password_hash($headers["encrypted_password"], PASSWORD_ARGON2ID);
+$hashed_password = password_hash($headers["decrypted_password"], PASSWORD_ARGON2ID);
 
 $sql = "INSERT INTO api_keys (key_name, encrypted_password, required_auth)
 VALUES (:key_name, :encrypted_password, :required_auth)";

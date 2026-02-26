@@ -1,8 +1,8 @@
 <?php
 
-$unit = $_GET["unit"] ?? $search_able ?? 0;
+$id = $_GET["unit"] ?? $search_able ?? 0;
 
-if (!preg_match("/^\d+$/", $unit) || (int)$unit <=-1) {
+if (!preg_match("/^\d+$/", $id) || (int)$id <=-1) {
 	echo json_encode((object)[
 		"status" => 422,
 		"success" => false,
@@ -26,9 +26,9 @@ if (str_contains($full_url[-1], "/")) {
 	http_response_code(200);
 	exit;
 
-} else if (preg_match("/^\d+$/", $unit) && (int)$unit>=0) {
+} else if (preg_match("/^\d+$/", $id) && (int)$id>=0) {
 	$sql = "SELECT a.id, a.key_name, a.encrypted_password FROM api_keys a WHERE a.id = :id";
-	$result = returnBoundFromSQL($dbh, $sql, "id", $unit);
+	$result = returnBoundFromSQL($dbh, $sql, "id", $id);
 
 	if (isset($result[0]["key_name"])) {
 		echo json_encode((object)[
