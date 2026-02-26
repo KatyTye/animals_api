@@ -16,6 +16,7 @@ createRoute(file_Path: "routes/docs", type: "docs", extra: false);
 // CREATE ALL ROUTES
 createRoute("units", "routes/units/index");
 createRoute("animals", "routes/animals/index");
+createRoute("families", "routes/families/index");
 createRoute("types", "routes/animal_types/index");
 createRoute("countries", "routes/countries/index");
 createRoute("colors", "routes/animal_colors/index");
