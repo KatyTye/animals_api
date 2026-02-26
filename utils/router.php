@@ -46,7 +46,8 @@ function loadRoutes() {
 			http_response_code(200);
 			exit;
 		} else if (strpos($url, $path->path) === 0
-			&& $path->search == true && $full_url[-1] != "/") {
+			&& $path->search == true && $full_url[-1] != "/" &&
+			substr_count($url, "/") == substr_count("$path->path/", "/")) {
 			if ($path->type == "json") {
 				header("Content-Type:application/json");
 			}
