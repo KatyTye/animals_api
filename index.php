@@ -11,14 +11,17 @@ require_once("./utils/resources.php");
 $http_method = $_SERVER["REQUEST_METHOD"];
 
 // CREATE DEFAULT ROUTE
-createRoute(file_Path: "routes/docs", type: "docs");
+createRoute(file_Path: "routes/docs", type: "docs", extra: false);
 
 // CREATE ALL ROUTES
-createRoute("units", "routes/units/index", extra: true);
-createRoute("animals", "routes/animals/index", extra: true);
-createRoute("types", "routes/animal_types/index", extra: true);
-createRoute("countries", "routes/countries/index", extra: true);
-createRoute("colors", "routes/animal_colors/index", extra: true);
+createRoute("units", "routes/units/index");
+createRoute("animals", "routes/animals/index");
+createRoute("types", "routes/animal_types/index");
+createRoute("countries", "routes/countries/index");
+createRoute("colors", "routes/animal_colors/index");
+
+// ADMIN ROUTES
+createRoute("api-keys", "routes/api_keys/index");
 
 // LOAD ROUTES
 loadRoutes();
