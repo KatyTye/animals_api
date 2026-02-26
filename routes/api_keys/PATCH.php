@@ -63,7 +63,10 @@ $sql = "UPDATE api_keys SET `$field` = :val WHERE id = :id";
 $stmt = $dbh->prepare($sql);
 $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
-if (!preg_match("/^\d+$/", $id)) {
+if ($field == "encrypted_password") {
+	$new_encrypted_password = password_hash($headers["value"], PASSWORD_ARGON2ID);
+	$stmt->bindValue(":val", $new_encrypted_password, PDO::PARAM_STR);
+} elseif (!preg_match("/^\d+$/", $id)) {
     $stmt->bindValue(":val", (int)$headers["value"], PDO::PARAM_INT);
 } else {
     $stmt->bindValue(":val", $headers["value"], PDO::PARAM_STR);
