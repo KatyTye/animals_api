@@ -36,6 +36,49 @@ function returnCalcPage($dbh, $sql, $page, $limit) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function returnWhenApiKeyMatch($database, $pass) {
+	$pass = $pass["Authorization"] ?? "";
+
+	if ($pass == "") {
+		echo json_encode((object)[
+			"status" => 400,
+			"success" => false,
+			"message" => "The request does not have the required headers."
+		]);
+		http_response_code(400);
+		exit;
+	}
+
+	$matches = "";
+	$pass = preg_match("/(?:Bearer )(.*$)/", $pass, $matches);
+	
+	$verify_sql = "SELECT a.id,a.encrypted_password FROM api_keys a";
+
+	$verify_result = returnFromSQL($database, $verify_sql);
+	$got_verifyed = false;
+
+	foreach ($verify_result as $key) {
+		if (password_verify($matches[1], $key["encrypted_password"]) == true) {
+			$got_verifyed = true;
+		}
+	}
+
+	switch ($got_verifyed) {
+
+		case (false):
+			echo json_encode((object)[
+				"status" => 401,
+				"success" => false,
+				"message" => "The request lacks valid authentication credentials."
+			]);
+			http_response_code(401);
+			exit;
+
+		case (true):
+			return;
+	}
+}
+
 function returnWhenVerified($database, $pass) {
 	$pass = $pass["Authorization"] ?? "";
 	
