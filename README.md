@@ -4,6 +4,8 @@ The Animals API is built using vanilla PHP. I created this project as a personal
 
 ## Database Setup SQL
 
+The database setup for this project uses **MySQL**.
+
 There is a file named `database_setup.sql` that you can use to set up the database used in this project. This script contains all the necessary SQL statements to create the required tables, define relationships, and apply the initial configuration.
 
 ## Git Ignore
