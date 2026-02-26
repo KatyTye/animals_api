@@ -229,3 +229,32 @@ function returnSortedList($result) {
 
 	return $returnValue;
 }
+
+function returnSingleList($result, $param) {
+	$returnValue = [];
+
+	foreach ($result as $object) {
+		$returnValue[] = $object[$param];
+	}
+
+	return $returnValue;
+}
+
+function returnMultiList($result, $param, $secondparam) {
+    $grouped = [];
+
+    foreach ($result as $object) {
+        $grouped[$object[$secondparam]][] = $object[$param];
+    }
+
+    $final = [];
+
+    foreach ($grouped as $key => $values) {
+        $final[] = [
+            $secondparam => $key,
+            $param => $values
+        ];
+    }
+
+    return $final;
+}
