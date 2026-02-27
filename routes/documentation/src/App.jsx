@@ -1,4 +1,5 @@
 import Article from "./components/Article"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import "./styles/main.sass"
 
@@ -8,6 +9,7 @@ function App() {
 		<>
 			<Header />
 			<Article />
+			<Footer />
 		</>
 	)
 }
