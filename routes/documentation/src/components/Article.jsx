@@ -1,7 +1,7 @@
 export default function Article() {
 
 	return (
-		<article id="top" className="page-article">
+		<article className="page-article">
 			<h2 className="page-article__title">
 				ABOUT THIS API
 			</h2>

@@ -1,7 +1,7 @@
 export default function Header() {
 
 	return (
-		<header className="top-content">
+		<header className="top-content" id="top">
 			<figure className="top-content__holder">
 				<img src="fox.svg" alt="page logo of a fox"
 					className="top-content__image" loading="lazy" />
