@@ -1,6 +1,7 @@
 [
 	{
 		"name": "Animals",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -98,6 +99,7 @@
 	},
 	{
 		"name": "Colors",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -147,6 +149,7 @@
 	},
 	{
 		"name": "Animal Countries",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -186,6 +189,7 @@
 	},
 	{
 		"name": "Animal Family",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -225,6 +229,7 @@
 	},
 	{
 		"name": "Types",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -271,6 +276,7 @@
 	},
 	{
 		"name": "Api Keys",
+		"req": true,
 		"methods": [
 			"GET",
 			"POST",
@@ -319,6 +325,7 @@
 	},
 	{
 		"name": "Countries",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -365,6 +372,7 @@
 	},
 	{
 		"name": "Families",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",
@@ -410,6 +418,7 @@
 	},
 	{
 		"name": "Units",
+		"req": false,
 		"methods": [
 			"GET",
 			"POST",

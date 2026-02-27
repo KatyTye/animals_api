@@ -7,7 +7,7 @@ export default function Methods() {
 			{
 				contentJSON.map((folder, idx) => {
 					return <section className={"content-section " + folder.name.replace(" ", "-")}
-						id={"folder-" + folder.name} key={"folder-" + folder.name}>
+						id={"folder-" + folder.name.replace(" ", "-")} key={"folder-" + folder.name}>
 						<h3 className="content-section__title">{folder.name}</h3>
 						<div className="content-section__method-holder">
 							<p>METHODS:</p>
@@ -23,7 +23,7 @@ export default function Methods() {
 
 						{
 							folder.endpoints.map((method, idx) => {
-								return <div id={method.name} className="content-section__endpoint-holder" key={idx + "-method-" + method.url}>
+								return <div id={method.name.replace(" ", "-")} className="content-section__endpoint-holder" key={idx + "-method-" + method.url}>
 									<p className="content-section__endpoint-title">
 										<span>
 											{method.name}
@@ -33,6 +33,12 @@ export default function Methods() {
 											{method.method}
 										</span>
 									</p>
+
+									{(folder.req == true &&
+										<p className="auth">
+											requires admin authorization
+										</p>
+									)}
 
 									<p className="content-section__endpoint">
 										{method.url}
