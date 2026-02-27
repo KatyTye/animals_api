@@ -1,0 +1,458 @@
+[
+	{
+		"name": "Animals",
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Animals",
+				"method": "GET",
+				"url": "http://localhost/project/animals/",
+				"fields": []
+			},
+			{
+				"name": "Get Animal",
+				"method": "GET",
+				"url": "http://localhost/project/animals/{id}",
+				"fields": []
+			},
+			{
+				"name": "Delete Animal",
+				"method": "DELETE",
+				"url": "http://localhost/project/animals/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Animal",
+				"method": "POST",
+				"url": "http://localhost/project/animals/",
+				"fields": [
+					"public",
+					"name",
+					"science_name",
+					"min_age",
+					"max_age",
+					"image",
+					"type",
+					"length_unit",
+					"weight_unit",
+					"length_min",
+					"length_max",
+					"weight_min",
+					"weight_max",
+					"phase_family_title",
+					"phase_family_text",
+					"phase_leaving_text",
+					"phase_baby_title",
+					"phase_independent_title",
+					"phase_baby_text",
+					"phase_independent_text",
+					"phase_leaving_title",
+					"color"
+				]
+			},
+			{
+				"name": "Update Animal Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/animals/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			},
+			{
+				"name": "Update Animal",
+				"method": "PUT",
+				"url": "http://localhost/project/animals/{id}",
+				"fields": [
+					"public",
+					"name",
+					"science_name",
+					"min_age",
+					"max_age",
+					"image",
+					"type",
+					"length_unit",
+					"weight_unit",
+					"length_min",
+					"length_max",
+					"weight_min",
+					"weight_max",
+					"phase_family_title",
+					"phase_family_text",
+					"phase_leaving_text",
+					"phase_baby_title",
+					"phase_independent_title",
+					"phase_baby_text",
+					"phase_independent_text",
+					"phase_leaving_title",
+					"color"
+				]
+			}
+		]
+	},
+	{
+		"name": "Colors",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Colors",
+				"method": "GET",
+				"url": "http://localhost/project/colors/",
+				"fields": []
+			},
+			{
+				"name": "Get Color",
+				"method": "GET",
+				"url": "http://localhost/project/colors/{id}",
+				"fields": []
+			},
+			{
+				"name": "Delete Color",
+				"method": "DELETE",
+				"url": "http://localhost/project/colors/{id}",
+				"fields": [
+					"name"
+				]
+			},
+			{
+				"name": "Create Color",
+				"method": "POST",
+				"url": "http://localhost/project/colors/",
+				"fields": [
+					"name",
+					"code"
+				]
+			},
+			{
+				"name": "Update Color Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/colors/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			}
+		]
+	},
+	{
+		"name": "Animal Countries",
+		"methods": [
+			"GET",
+			"POST",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Animal Countries",
+				"method": "GET",
+				"url": "http://localhost/project/animals/country/",
+				"fields": []
+			},
+			{
+				"name": "Get Animal Country",
+				"method": "GET",
+				"url": "http://localhost/project/animals/country/{id}",
+				"fields": []
+			},
+			{
+				"name": "Delete Animal Country",
+				"method": "DELETE",
+				"url": "http://localhost/project/animals/country/{id}",
+				"fields": [
+					"country_id"
+				]
+			},
+			{
+				"name": "Create Animal Country",
+				"method": "POST",
+				"url": "http://localhost/project/animals/country/{id}",
+				"fields": [
+					"animal_id",
+					"country_id"
+				]
+			}
+		]
+	},
+	{
+		"name": "Animal Family",
+		"methods": [
+			"GET",
+			"POST",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Animal Families",
+				"method": "GET",
+				"url": "http://localhost/project/animals/family/",
+				"fields": []
+			},
+			{
+				"name": "Get Animal Family",
+				"method": "GET",
+				"url": "http://localhost/project/animals/family/{id}",
+				"fields": []
+			},
+			{
+				"name": "Delete Animal Family",
+				"method": "DELETE",
+				"url": "http://localhost/project/animals/family/{id}",
+				"fields": [
+					"family_id"
+				]
+			},
+			{
+				"name": "Create Animal Family",
+				"method": "POST",
+				"url": "http://localhost/project/animals/family/{id}",
+				"fields": [
+					"animal_id",
+					"family_id"
+				]
+			}
+		]
+	},
+	{
+		"name": "Types",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Types",
+				"method": "GET",
+				"url": "http://localhost/project/types/",
+				"fields": []
+			},
+			{
+				"name": "Get Type",
+				"method": "GET",
+				"url": "http://localhost/project/types/{id}",
+				"fields": []
+			},
+			{
+				"name": "Delete Type",
+				"method": "DELETE",
+				"url": "http://localhost/project/types/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Type",
+				"method": "POST",
+				"url": "http://localhost/project/types/",
+				"fields": [
+					"name"
+				]
+			},
+			{
+				"name": "Update Type Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/types/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			}
+		]
+	},
+	{
+		"name": "Api Keys",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Keys",
+				"method": "GET",
+				"url": "http://localhost/project/api-keys/",
+				"fields": []
+			},
+			{
+				"name": "Get Key",
+				"method": "GET",
+				"url": "http://localhost/project/api-keys/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Key",
+				"method": "POST",
+				"url": "http://localhost/project/api-keys/",
+				"fields": [
+					"key_name",
+					"decrypted_password",
+					"required_auth"
+				]
+			},
+			{
+				"name": "Update Key Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/api-keys/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			},
+			{
+				"name": "Delete Key",
+				"method": "DELETE",
+				"url": "http://localhost/project/api-keys/{id}",
+				"fields": []
+			}
+		]
+	},
+	{
+		"name": "Countries",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Countries",
+				"method": "GET",
+				"url": "http://localhost/project/countries/",
+				"fields": []
+			},
+			{
+				"name": "Get Country",
+				"method": "GET",
+				"url": "http://localhost/project/countries/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Country",
+				"method": "POST",
+				"url": "http://localhost/project/countries/{id}",
+				"fields": [
+					"name"
+				]
+			},
+			{
+				"name": "Update Country Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/countries/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			},
+			{
+				"name": "Delete Country",
+				"method": "DELETE",
+				"url": "http://localhost/project/countries/{id}",
+				"fields": []
+			}
+		]
+	},
+	{
+		"name": "Families",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Families",
+				"method": "GET",
+				"url": "http://localhost/project/families/",
+				"fields": []
+			},
+			{
+				"name": "Get Family",
+				"method": "GET",
+				"url": "http://localhost/project/families/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Family",
+				"method": "POST",
+				"url": "http://localhost/project/families/",
+				"fields": [
+					"animal_name"
+				]
+			},
+			{
+				"name": "Update Family Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/families/{id}",
+				"fields": [
+					"value"
+				]
+			},
+			{
+				"name": "Delete Family",
+				"method": "DELETE",
+				"url": "http://localhost/project/families/{id}",
+				"fields": []
+			}
+		]
+	},
+	{
+		"name": "Units",
+		"methods": [
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE"
+		],
+		"endpoints": [
+			{
+				"name": "Get All Units",
+				"method": "GET",
+				"url": "http://localhost/project/units/",
+				"fields": []
+			},
+			{
+				"name": "Get Unit",
+				"method": "GET",
+				"url": "http://localhost/project/units/{id}",
+				"fields": []
+			},
+			{
+				"name": "Create Unit",
+				"method": "POST",
+				"url": "http://localhost/project/units/",
+				"fields": [
+					"name",
+					"short_name"
+				]
+			},
+			{
+				"name": "Update Unit Field",
+				"method": "PATCH",
+				"url": "http://localhost/project/units/{id}",
+				"fields": [
+					"field",
+					"value"
+				]
+			},
+			{
+				"name": "Delete Unit",
+				"method": "DELETE",
+				"url": "http://localhost/project/units/{id}",
+				"fields": []
+			}
+		]
+	}
+]
