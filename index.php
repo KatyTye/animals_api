@@ -11,7 +11,7 @@ require_once("./utils/resources.php");
 $http_method = $_SERVER["REQUEST_METHOD"];
 
 // CREATE DEFAULT ROUTE
-createRoute(file_Path: "routes/docs", type: "docs", extra: false);
+createRoute(file_Path: "routes/documentation/docs/index", type: "docs", file_Type: "html", extra: false);
 
 // CREATE ALL ROUTES
 createRoute("units", "routes/units/index");
