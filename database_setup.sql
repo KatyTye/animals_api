@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2026 at 09:48 AM
+-- Generation Time: Feb 27, 2026 at 08:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `squirrels`
+-- Database: `animals_database`
 --
 
 -- --------------------------------------------------------
@@ -79,7 +79,8 @@ CREATE TABLE `animals` (
 --
 
 INSERT INTO `animals` (`id`, `created`, `public`, `name`, `science_name`, `min_age`, `max_age`, `image`, `type`, `length_unit`, `weight_unit`, `length_min`, `length_max`, `weight_min`, `weight_max`, `phase_family_title`, `phase_family_text`, `phase_baby_title`, `phase_baby_text`, `phase_leaving_title`, `phase_leaving_text`, `phase_independent_title`, `phase_independent_text`, `color`) VALUES
-(1, '2026-02-19', 1, 'Eastern Gray Squirrel', 'Sciurus carolinensis', 6, 12, 's1image.jpg', 1, 1, 2, 48, 51, 400, 600, 'These squirrels are born in leafy nests.', 'Eastern Gray Squirrels are born in leafy nests or tree hollows, typically in litters of 2-4. Mothers are solely responsible for care, nursing the young for up to 10 weeks. This highly adaptable species is diurnal and lives in both wild forests and urban parks.', 'Newborns are blind and hairless.', 'Newborns are blind and hairless. Eyes open at about 4 weeks, and fur develops soon after. Babies begin to explore the nest by 6 weeks, remaining under the mother\'s care as they transition to solscience_name food.', 'Around 12 weeks, juveniles begin to leave the nest.', 'At around 10-12 weeks, juveniles begin to leave the nest, practicing climbing and foraging skills under maternal supervision. Nest-leaving juveniles may remain near their natal area, with gradual reduction of dependency.', 'After 12 weeks, young squirrels are fully independent.', 'By 12 weeks, young squirrels are fully independent and establish their own territories. Adults are solitary, caching food throughout the year and communicating via tail flicking and vocalizations.', 1);
+(1, '2026-02-19', 1, 'Eastern Gray Squirrel', 'Sciurus carolinensis', 6, 12, 's1image.jpg', 1, 1, 2, 48, 51, 400, 600, 'These squirrels are born in leafy nests.', 'Eastern Gray Squirrels are born in leafy nests or tree hollows, typically in litters of 2-4. Mothers are solely responsible for care, nursing the young for up to 10 weeks. This highly adaptable species is diurnal and lives in both wild forests and urban parks.', 'Newborns are blind and hairless.', 'Newborns are blind and hairless. Eyes open at about 4 weeks, and fur develops soon after. Babies begin to explore the nest by 6 weeks, remaining under the mother\'s care as they transition to solscience_name food.', 'Around 12 weeks, juveniles begin to leave the nest.', 'At around 10-12 weeks, juveniles begin to leave the nest, practicing climbing and foraging skills under maternal supervision. Nest-leaving juveniles may remain near their natal area, with gradual reduction of dependency.', 'After 12 weeks, young squirrels are fully independent.', 'By 12 weeks, young squirrels are fully independent and establish their own territories. Adults are solitary, caching food throughout the year and communicating via tail flicking and vocalizations.', 1),
+(2, '2026-02-26', 1, 'American Red Squirrel', 'Tamiasciurus hudsonicus', 3, 8, 's2image.jpg', 1, 1, 2, 28, 38, 170, 200, 'One of three.', 'The American red squirrel is one of three tree squirrels in this genus. Nests in trees or cavities in spruce, poplar, and walnut trees.', 'Offspring are pink.', 'Offspring are pink and hairless at birth, weighing about 10g. They emerge from nests at 42 days but continue to nurse up to 70 days, reaching adult body size at around 125 days.', 'Juveniles must acquire a territory.', 'Juveniles must acquire a territory and mscience_nameden to survive their first winter. Some receive territory from their mothers, others disperse nearby. Foraging and predator-avoscience_nameance skills develop rapscience_namely.', 'Red squirrels are highly territorial and asocial.', 'Red squirrels are highly territorial and asocial, with adults constructing food mscience_namedens for overwinter survival. Females breed at 1–2 years of age but may live longer in captivity.', 3);
 
 -- --------------------------------------------------------
 
@@ -114,6 +115,19 @@ CREATE TABLE `animal_countries` (
   `country_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `animal_countries`
+--
+
+INSERT INTO `animal_countries` (`animal_id`, `country_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(2, 1),
+(2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +138,17 @@ CREATE TABLE `animal_families` (
   `animal_id` int(11) NOT NULL,
   `family_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `animal_families`
+--
+
+INSERT INTO `animal_families` (`animal_id`, `family_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5);
 
 -- --------------------------------------------------------
 
@@ -206,7 +231,9 @@ CREATE TABLE `families` (
 INSERT INTO `families` (`id`, `animal_name`) VALUES
 (1, 'Fox Squirrel (Sciurus niger)'),
 (2, 'Western Gray Squirrel (Sciurus griseus)'),
-(3, 'American Red Squirrel (Tamiasciurus hudsonicus)');
+(3, 'American Red Squirrel (Tamiasciurus hudsonicus)'),
+(4, 'Douglas Squirrel (Tamiasciurus douglasii)'),
+(5, 'Southwestern Red Squirrel (Tamiasciurus fremonti)');
 
 -- --------------------------------------------------------
 
@@ -313,7 +340,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `animals`
 --
 ALTER TABLE `animals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `animal_colors`
@@ -343,7 +370,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `families`
 --
 ALTER TABLE `families`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `units`
