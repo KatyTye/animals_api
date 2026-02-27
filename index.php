@@ -20,7 +20,8 @@ createRoute("families", "routes/families/index");
 createRoute("types", "routes/animal_types/index");
 createRoute("countries", "routes/countries/index");
 createRoute("colors", "routes/animal_colors/index");
-createRoute("animals/family", "routes/animal_families/index");
+createRoute("animals/family", file_Path: "routes/animal_families/index");
+createRoute("animals/country", file_Path: "routes/animal_countries/index");
 
 // ADMIN ROUTES
 createRoute("api-keys", "routes/api_keys/index");
