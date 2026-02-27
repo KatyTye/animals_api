@@ -1,6 +1,7 @@
 import Article from "./components/Article"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import Methods from "./components/Methods"
 import "./styles/main.sass"
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 		<>
 			<Header />
 			<Article />
+			<Methods />
 			<Footer />
 		</>
 	)

@@ -1,0 +1,61 @@
+// COLORS
+@use "./_colors.sass" as var
+
+// METHODS STYLING
+
+.content-section
+	width: 60dvw
+	padding: 25px 0
+	min-width: 350px
+	max-width: 1000px
+	border: 1px solid var.$primary-border-color
+
+	&__title
+		font-size: 1.5rem
+		margin: 0 0 5px 25px
+
+	&__endpoint
+		padding: 20px
+		margin-top: 15px
+		font-size: 0.85rem
+		border-radius: 5px
+		letter-spacing: 2px
+		background: var.$secondary-background-color
+
+		&-title
+			display: flex
+			font-size: 1.1rem
+			font-weight: bold
+			justify-content: space-between
+
+		&-fields
+			& li
+				padding: 20px
+				margin-top: 15px
+				font-size: 0.85rem
+				border-radius: 5px
+				letter-spacing: 2px
+				background: var.$secondary-background-color
+
+			&-title
+				font-weight: bold
+				margin-top: 15px
+
+		&-holder
+			padding: 25px
+			border-top: 1px solid var.$primary-border-color
+
+	&__method
+		&-holder
+			gap: 10px
+			display: flex
+			font-weight: bold
+			font-size: 0.75rem
+			font-style: italic
+			margin: 0 0 50px 25px
+
+			& p
+				color: var.$secondary-text-color
+		&s
+			gap: 10px
+			display: inherit
