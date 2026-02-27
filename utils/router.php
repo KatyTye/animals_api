@@ -62,13 +62,24 @@ function loadRoutes() {
 
 	foreach ($resources as $source) {
 		if ($url == "$source->url_path$source->name.$source->type") {
-			$mime = mime_content_type($source->path);
+			$ext = pathinfo($source->path, PATHINFO_EXTENSION);
 
-			header("Content-Type: $mime");
-			header("Content-Disposition: inline; filename=\"" . basename($source->path) . "\"");
+			switch ($ext) {
+				case 'js':
+					header('Content-Type: application/javascript');
+					break;
 
-			readfile("./$source->path");
-			http_response_code(200);
+				case 'css':
+					header('Content-Type: text/css');
+					break;
+
+				default:
+					header('Content-Type: '.mime_content_type($source->path));
+			}
+
+			header('Content-Disposition: inline; filename="' . basename($source->path) . '"');
+
+			readfile($source->path);
 			exit;
 		}
 	}
