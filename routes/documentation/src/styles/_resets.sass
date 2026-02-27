@@ -1,0 +1,36 @@
+// COLORS
+@use "./_colors.sass" as var
+
+// BROWSER RESETS
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	color: var.$primary-text-color
+	font-family: var.$primary-font
+
+a
+	display: block
+	margin-bottom: 2px
+	width: fit-content
+	padding-bottom: 1px
+	text-decoration: none
+	color: var.$primary-link-color
+	transition: border-bottom 0.3s
+	border-bottom: transparent 2px solid
+
+	&:hover, &:focus
+		color: var.$primary-link-color
+		border-bottom: var.$primary-link-color 2px solid
+
+body
+	gap: 25px
+	display: flex
+	width: 100dvw
+	min-height: 100dvh
+	align-items: center
+	flex-direction: column
+	scroll-behavior: smooth
+	justify-content: space-between
+	background: var.$primary-background-color
