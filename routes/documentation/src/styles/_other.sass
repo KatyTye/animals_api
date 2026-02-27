@@ -1,0 +1,24 @@
+// COLORS
+@use "./_colors.sass" as var
+@use 'sass:color'
+
+// OTHER STYLING
+
+.overlay-content
+	display: block
+	position: fixed
+
+	&#top-button
+		right: 50px
+		width: 40px
+		bottom: 25px
+		height: 40px
+		border: none
+		cursor: pointer
+		border-radius: 5px
+		font-weight: bolder
+		transition: background 0.3s
+		background: var.$primary-link-color
+
+		&:hover
+			background: darken(var.$primary-link-color, 15%)
