@@ -6,6 +6,14 @@ export default function Article() {
 				ABOUT THIS API
 			</h2>
 
+			<p className="page-article__important">
+				<span>
+					IMPORTANT:
+				</span> All other methods then
+				<span className="GET"> GET </span>
+				requires admin authorization.
+			</p>
+
 			<a href="https://github.com/KatyTye/animals_api" target="_blank">
 				Click here to open GitHub Repo
 			</a>
